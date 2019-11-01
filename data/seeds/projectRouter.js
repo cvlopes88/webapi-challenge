@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    project.get(req.params.id)
+    project.getProjectActions(req.params.id)
     .then(pro => {
         if (pro) {
         res.status(200).json(pro)}else{
@@ -66,4 +66,14 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+
+// router.get('/:id', (req, res) => {
+//     project.getProjectActions(req.params.id)
+//     .then(pro => {
+//         res.status(200).json(pro)
+//     })
+//     .catch(err => {
+//         res.status(500).json({error: 'the actions of this project couldnt be found'})
+//     })
+// })
 module.exports = router;
