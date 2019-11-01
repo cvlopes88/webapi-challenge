@@ -12,7 +12,7 @@ const actRouter = require('./data/seeds/actionRouter');
 const proRouter = require('./data/seeds/projectRouter');
 
 server.get('/', (req, res) => {
-
+res.status(200).json({message: 'Working Great! I guess thats MVP'})
 });
 
 server.use('/api/projects', proRouter)
